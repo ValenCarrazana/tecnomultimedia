@@ -78,12 +78,7 @@ void draw () {
     }
   }
   if (estado.equals("ganaste")) {
-    background (100, 100, 100);
-    pushStyle();
-    textSize(40);
-    fill (0, 0, 100);
-    text ("¡FELICIDADES GANASTE!", width/2, height/4);
-    popStyle();
+    MiTextoFondo ("¡FELICIDADES GANASTE!", 40, width/2, height/4, 0, 0, 100,100, 100, 100);
     image (FotoGana, 200, 200, 200,200);
 
     //--------------BOTON CREDITOS---------------------
@@ -98,41 +93,27 @@ void draw () {
   }
 
   if (estado.equals("perdiste")) {
-    background (359, 98, 99);
-    pushStyle();
-    textSize(40);
-    fill (0, 0, 100);
-    text ("¡PERDISTE!", width/2, height/4);
-    popStyle();
+    MiTextoFondo ("¡PERDISTE!", 40, width/2, height/4,0, 0, 100,359, 98, 99);
+  
     //--------------BOTON REINICIO---------------------
-    pushStyle();
     fill (0, 0, 0);
     noStroke();
     rect (130, 390, 330, 130);
-    fill (359, 98, 99);
-    textSize (35);
-    text ("Presiona ENTER\n para reiniciar", 300, 450);
-    popStyle();
+    MiTexto ("Presiona ENTER\n para reiniciar", 35, 300, 450,359, 98, 99);
+
     
     image (FotoPierde, 190, 190, 220,180);
   }
     if (estado.equals("creditos")) {
-    background (359, 98, 99);
-    pushStyle();
-    textSize(30);
-    fill (0, 0, 100);
-    text ("¡Gracias por jugar! \n\nJuego programado por: \nValentina Carrazana \n91396/7\nTecno Multimedia 1 \n Comision 2", width/2,200);
-    popStyle();
+    MiTextoFondo ("¡Gracias por jugar! \n\nJuego programado por: \nValentina Carrazana \n91396/7\nTecno Multimedia 1 \n Comision 2", 30, width/2,200, 0, 0, 100,359, 98, 99);
+
     
         //--------------BOTON REINICIO---------------------
-    pushStyle();
     fill (0, 0, 0);
     noStroke();
     rect (100, 410, 400, 150);
-    fill (359, 98, 99);
-    textSize (35);
-    text ("Presiona ENTER\n para volver a jugar", 300, 470);
-    popStyle();
+    MiTexto ("Presiona ENTER\n para volver a jugar", 35, 300, 470,359, 98, 99);
+
     //------------------------------------------------------------------------
 }
   if ( contadorTiempo >= 5*60 ) {
