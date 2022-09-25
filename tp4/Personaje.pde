@@ -24,13 +24,6 @@ void dibujar() {
     void moverIzquierda(){
     x-=vel;
   }
-    void moverArriba(){
-    y -=vel;
-  }
-    void moverAbajo(){
-    y+=vel;
-  }
-  
-  }
-  
-  
+
+
+}
