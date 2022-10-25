@@ -16,7 +16,7 @@ class Boton {
   }
 
   void dibujar() {
-          
+          println(deteccion);
     if (this.tipo.equals("Principal")) {
       push();
       
@@ -24,14 +24,14 @@ class Boton {
       rect(this.x, this.y, this.tam, this.tam);
       
       fill(0);
-      text("Iniciar", this.x + this.tam/40, this.y + this.tam/20);
+      text("Presiona la tecla e para empezar", this.x + this.tam/40, this.y + this.tam/20);
       pop();
     } 
 
   }
 
   void deteccion() {
-    if (mouseX > this.x && mouseX < this.x + this.tam && mouseY > this.y && mouseY <  this.y + this.tam) {
+      if (mouseX > x && mouseX < x+ tam && mouseY > y && mouseY < y + tam ) {
       this.deteccion = true;
     } else {
       this.deteccion = false;
@@ -39,7 +39,7 @@ class Boton {
   }
 
   void clicked () {
-    if (mousePressed && this.deteccion && this.juego.estadoID == 0 && this.tipo.equals("Principal")) {
+    if (key == 'e' && this.juego.estadoID == 0 && this.tipo.equals("Principal")) {
       this.juego.estadoID = 1;
 
 

@@ -1,9 +1,9 @@
-class Rectangulo {
+class Caida {
   float x,y,tam;
     PImage pez;
-    Rectangulo  rectangulo;
+    Caida  Pez;
   
-Rectangulo () {
+Caida () {
     rectMode (CENTER);
     textAlign (CENTER);
     noStroke();

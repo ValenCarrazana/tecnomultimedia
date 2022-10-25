@@ -10,5 +10,6 @@ void draw() {
 }
 
 void keyPressed () {
-  juego.teclado();
+    juego.clicked();
+    juego.teclado();
 }

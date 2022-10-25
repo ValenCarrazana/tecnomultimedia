@@ -1,12 +1,12 @@
 class Pantalla {
   Boton botonPrincipal;
   Personaje Gnegro;
-  Rectangulo []  rectangulo ;
+  Caida []  Pez ;
 
 
-  Pantalla(Boton botonPrincipal, Rectangulo []  rectangulo, Personaje Gnegro) {
+  Pantalla(Boton botonPrincipal, Caida []  Pez, Personaje Gnegro) {
     this.botonPrincipal = botonPrincipal;
-    this.rectangulo = rectangulo;
+    this.Pez = Pez;
     this.Gnegro = Gnegro;
  
   }
@@ -15,6 +15,8 @@ class Pantalla {
     if (estadoID == 0) {
       this.dibujarPantallaPrincipal();
     } else  if (estadoID == 1) {
+      this.dibujarPantallaPlay();
+          } else  if (estadoID == 2) {
       this.dibujarPantallaPlay();
     }
   }
@@ -28,16 +30,23 @@ class Pantalla {
 
   void dibujarPantallaPlay() {
     background(#FFF0F0);
-    this.dibujarArregloDeRects();
+    this.dibujarArregloDePeces();
     this.Gnegro.dibujar();
     this.Gnegro.moverDerecha();
     this.Gnegro.moverIzquierda();
   }
+  
+  
+  void dibujarPantallaFinal() {
+    background(#FFF0F0);
+
+  }
 
 
-    void dibujarArregloDeRects() {
+
+    void dibujarArregloDePeces() {
     for (int i = 0; i < 30; i++) {
-      this.rectangulo[i].dibujar();
+      this.Pez[i].dibujar();
     }
 }
 }
