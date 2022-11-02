@@ -7,9 +7,9 @@ void setup() {
 }
 void draw() {
   juego.dibujar();
+  juego.colision();
 }
 
 void keyPressed () {
-    juego.clicked();
     juego.teclado();
 }

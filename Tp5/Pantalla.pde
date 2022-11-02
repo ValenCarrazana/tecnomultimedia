@@ -2,6 +2,7 @@ class Pantalla {
   Boton botonPrincipal;
   Personaje Gnegro;
   Caida []  Pez ;
+  
 
 
   Pantalla(Boton botonPrincipal, Caida []  Pez, Personaje Gnegro) {
@@ -36,6 +37,7 @@ class Pantalla {
     this.Gnegro.moverIzquierda();
   }
   
+ // sumar velocidad random tipo int arreglo de velocidades ???
   
   void dibujarPantallaFinal() {
     background(#FFF0F0);

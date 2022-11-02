@@ -4,6 +4,8 @@ class Juego {
   Boton botonPrincipal; 
   Caida []  Pez;
   Personaje Gnegro;
+  int suma;
+  boolean recolecta;
 
 
   Juego() {
@@ -13,11 +15,24 @@ class Juego {
     this.construirRects();
     this.pantalla = new Pantalla(this.botonPrincipal, this.Pez, this.Gnegro);
     this.estadoID = 0;
+
   }
 
+void colision (){
+      for (int i = 0; i < 30; i++) {
+  if ( Gnegro.x <  Pez[i].x &&
+  Gnegro.x+Gnegro.tam > Pez[i].x+Pez[i].tam &&
+  Gnegro.y - Gnegro.tam < Pez[i].y && Pez[i].y < height)
+ // && Gnegro.y >  Pez[i].y && Gnegro.y+Gnegro.tam < Pez[i].y+Pez[i].tam )
+  recolecta = true;
+  suma++;
+ // Pez[i].y = -height;
+}
+      }
 
   void dibujar() {
     this.pantalla.dibujar(this.estadoID);
+    println(suma);
   }
 
 
@@ -28,15 +43,13 @@ class Juego {
     
   }
     void teclado (){
+      
+    botonPrincipal.teclado();
     
   if (key == 'd' || key == 'D' )
     this.Gnegro.moverDerecha();
 
   if (key == 'a'|| key == 'A' )
     this.Gnegro.moverIzquierda();
-}
-
-void clicked (){
-  this.botonPrincipal.clicked();
 }
   }
