@@ -8,7 +8,7 @@ Caida () {
     textAlign (CENTER);
     noStroke();
     x = random (0, 600);
-    y = random (0, 300);
+    y = random (-height, 300);
     tam = 50;
         pez = loadImage ("pez.png");
   }
@@ -20,4 +20,5 @@ Caida () {
 
 
 }
+
 }

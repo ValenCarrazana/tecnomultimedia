@@ -1,13 +1,17 @@
 class Pantalla {
+
   Boton botonPrincipal;
   Personaje Gnegro;
   Caida []  Pez ;
+  Contador Puntos; 
+  
 
 
-  Pantalla(Boton botonPrincipal, Caida []  Pez, Personaje Gnegro) {
+  Pantalla(Boton botonPrincipal, Caida []  Pez, Personaje Gnegro, Contador Puntos) {
     this.botonPrincipal = botonPrincipal;
     this.Pez = Pez;
     this.Gnegro = Gnegro;
+    this.Puntos = Puntos;
  
   }
 
@@ -30,12 +34,15 @@ class Pantalla {
 
   void dibujarPantallaPlay() {
     background(#FFF0F0);
+    this.Puntos.dibujar();
     this.dibujarArregloDePeces();
     this.Gnegro.dibujar();
     this.Gnegro.moverDerecha();
     this.Gnegro.moverIzquierda();
+ 
   }
   
+ // sumar velocidad random tipo int arreglo de velocidades ???
   
   void dibujarPantallaFinal() {
     background(#FFF0F0);

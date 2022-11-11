@@ -14,7 +14,7 @@ class Personaje {
     vel = 10;
     gato = loadImage ("gato.png");
   }
-
+ 
 
   void dibujar () {
     fill (#503150);

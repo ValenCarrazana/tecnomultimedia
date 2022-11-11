@@ -38,7 +38,7 @@ class Boton {
     }
   }
 
-  void clicked () {
+  void teclado () {
     if (key == 'e' && this.juego.estadoID == 0 && this.tipo.equals("Principal")) {
       this.juego.estadoID = 1;
 
