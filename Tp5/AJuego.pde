@@ -1,29 +1,36 @@
 class Juego {
-  
+
   Pantalla pantalla;
   Boton botonPrincipal; 
+  Caida []  PezObstaculo;
   Caida []  Pez;
   Personaje Gnegro;
   Contador Puntos;
- 
-   int estadoID;
-  int suma;
+  Contador Tiempo;
+
+  int suma, estadoID, timer;
   boolean recolecta;
-  
+
 
 
   Juego() {
     this.botonPrincipal = new Boton(this, width/2, height/2, width/2, "Principal");
     this.Gnegro = new Personaje ();
-    this.Puntos = new Contador(juego, this.Puntos, suma , width/2, height/2, width/2);
+    this.Puntos = new Contador( this.Puntos, suma, width/2, height/8, width/8);
+    this.Tiempo = new Contador( this.Puntos, timer, width/8, height/8, width/8);
+    ///////////////////////////////
     this.Pez = new Caida[30];
     this.construirPeces();
-    this.pantalla = new Pantalla(this.botonPrincipal, this.Pez, this.Gnegro, this.Puntos);
+    this.PezObstaculo= new Caida[20];
+    this.construirPecesPodridos();
+    //////////////
+    this.pantalla = new Pantalla(this.botonPrincipal, this.Pez, this.PezObstaculo, this.Gnegro, this.Puntos, this.Tiempo);
     this.estadoID = 0;
-
+    this.suma = 0;
+    this.timer =0;
   }
 
-void colision () {
+  void colision () {
     for (int i = 0; i < 30; i++) {
       if ( Pez[i].x + Pez[i].tam /2 < Gnegro.x+Gnegro.tam /2 &&
         Pez[i].x - Pez[i].tam /2 > Gnegro.x-Gnegro.tam /2 &&
@@ -31,35 +38,39 @@ void colision () {
         Pez[i].y - Pez[i].tam /2 < height) {
         recolecta = true;
         suma++;
-         Pez[i].y = -height;
+        Pez[i].y = -height;
         println("Colisionando");
- 
       }
     }
-}
-  
+  }
+
 
   void dibujar() {
     this.pantalla.dibujar(this.estadoID);
+    timer++;
     println(suma);
   }
 
 
-    void construirPeces() {
+  void construirPeces() {
     for (int i = 0; i < 30; i++) {
       this.Pez[i] = new Caida();
     }
-    
+
+
+      void construirPecesPodridos() {
+      for (int i = 0; i < 20; i++) {
+        this.PezObstaculo[i] = new Caida();
+      }
+    }
+    void teclado () {
+
+      botonPrincipal.teclado();
+
+      if (key == 'd' || key == 'D' )
+        this.Gnegro.moverDerecha();
+
+      if (key == 'a'|| key == 'A' )
+        this.Gnegro.moverIzquierda();
+    }
   }
-    void teclado (){
-      
-    botonPrincipal.teclado();
-    
-  if (key == 'd' || key == 'D' )
-    this.Gnegro.moverDerecha();
-
-  if (key == 'a'|| key == 'A' )
-    this.Gnegro.moverIzquierda();
-}
-
-}

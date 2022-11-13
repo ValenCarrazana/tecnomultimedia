@@ -16,7 +16,7 @@ class Boton {
   }
 
   void dibujar() {
-          println(deteccion);
+    
     if (this.tipo.equals("Principal")) {
       push();
       
