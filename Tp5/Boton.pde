@@ -1,49 +1,32 @@
 class Boton {
-  int x, y, tam;
+  int x, y, tam, s;
   String tipo;
-  boolean deteccion;
-  Juego juego;
-  Boton(Juego juego, int x, int y, int tam, String tipo) {
+  PImage logo;
+
+  Boton( int s, int x, int y, int tam) {
 
     rectMode (CENTER);
     textAlign (CENTER);
     noStroke();
-    this.juego = juego;
-    this.tipo = tipo;
+
     this.x = x;
     this.y = y;
     this.tam = tam;
+    this.s = s;
+    logo = loadImage ("marca.png");
   }
 
   void dibujar() {
-    
-    if (this.tipo.equals("Principal")) {
-      push();
-      
-      fill(#FFC9C9);
-      rect(this.x, this.y, this.tam, this.tam);
-      
-      fill(0);
-      text("Presiona la tecla e para empezar", this.x + this.tam/40, this.y + this.tam/20);
-      pop();
-    } 
 
-  }
+    pushStyle();
 
-  void deteccion() {
-      if (mouseX > x && mouseX < x+ tam && mouseY > y && mouseY < y + tam ) {
-      this.deteccion = true;
-    } else {
-      this.deteccion = false;
-    }
-  }
+    fill(#FFC9C9);
+    rect(this.x, this.y, this.tam, 50, 100);
 
-  void teclado () {
-    if (key == 'e' && this.juego.estadoID == 0 && this.tipo.equals("Principal")) {
-      this.juego.estadoID = 1;
+    fill(0);
+    text("Presiona la tecla e para empezar", this.x + this.tam/40, 390 + this.tam/20);
+    popStyle();
 
-
-  }
-  }
-  
-  }
+    image(logo, 100, 100, 400, 300);
+  } 
+}
