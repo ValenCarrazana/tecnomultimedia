@@ -64,7 +64,7 @@ class Juego {
     if (estadoID == 2) {
       timer++;
     }
-   // println(suma);
+    // println(suma);
   }
 
 
@@ -114,9 +114,18 @@ class Juego {
   }
 
   void sound () {
-    if (estadoID ==0  || estadoID ==1    || estadoID ==2 || estadoID ==3  || estadoID ==4) {
+    if (estadoID ==0  || estadoID ==1    || estadoID ==2 || estadoID ==3) {
       player.play();
     }
-
-}
+    
+    if ( estadoID==4 ) {
+     player.pause();
+      player2.play();
+    }
+    
+    if ( estadoID==3 ) {
+     player.pause();
+      player3.play();
+    }
+  }
 }

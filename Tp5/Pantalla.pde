@@ -89,6 +89,7 @@ class Pantalla {
 
 
   void dibujarPantallaPerdiste() {
+    background(fondo);
     image (Prdiste, 120, 20, 400, 500);
     fill(255);
     this.volverajugar();
