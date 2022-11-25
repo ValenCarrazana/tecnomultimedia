@@ -25,41 +25,41 @@ class Pantalla {
     Prdiste = loadImage ("youlost.png");
   }
 
-  void dibujar(int estadoID) {
-  
-  //pantallas  
-    if (estadoID == 0) {
+  void dibujar() {
+
+    //pantallas  
+    if (juego.estadoID == 0) {
       this.dibujarPantallaPrincipal();
     }
 
-    if (estadoID == 1) {
+    if (juego.estadoID == 1) {
       this. dibujarPantallaIntroduccion();
     }
 
-    if (estadoID == 2) {
+    if (juego.estadoID == 2) {
       this.dibujarPantallaPlay();
     }
     //condiciones
 
-    if (estadoID == 2 && juego.suma+juego.resta == 5 && juego.timer/60 <20) {
-      estadoID = 3;
+    if (juego.estadoID == 2 && juego.suma+juego.resta == 5 && juego.timer/60 <20) {
+      juego.estadoID = 3;
+      // juego.reiniciar();
     }
 
 
-    if (estadoID == 2 && juego.suma+juego.resta <5 && juego.timer/60 >20 ) {
-      estadoID = 4;
+    if (juego.estadoID == 2 && juego.suma+juego.resta <5 && juego.timer/60 >20 ) {
+      juego.estadoID = 4;
+      //   juego.reiniciar();
     }
-    
-    
-    if (estadoID == 3) {
+
+
+    if (juego.estadoID == 3) {
       this.dibujarPantallaGanaste();
     }
 
-    if (estadoID == 4) {
+    if (juego.estadoID == 4) {
       this.dibujarPantallaPerdiste();
     }
-    
-
   }
 
   void dibujarPantallaPrincipal() {
@@ -89,6 +89,7 @@ class Pantalla {
 
 
   void dibujarPantallaPerdiste() {
+    background(fondo);
     image (Prdiste, 120, 20, 400, 500);
     fill(255);
     this.volverajugar();

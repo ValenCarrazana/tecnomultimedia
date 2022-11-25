@@ -29,25 +29,4 @@ class Boton {
 
     image(logo, 100, 100, 400, 300);
   } 
-
-
-
-
-  void teclado () {
-    if (juego.estadoID == 0 && key == 'e' || key == 'E' ) {
-      juego.estadoID = 1;
-    }
-
-    if (juego.estadoID == 1 && key == 'h' || key == 'h') {
-      juego.estadoID = 2;
-    }
-
-    if (juego.estadoID == 3 && key == 'p' || key == 'p') {
-      juego.reiniciar();
-    }
-    
-      if (juego.estadoID == 4 && key == 'p' || key == 'p') {
-      juego.reiniciar();
-    }
-  }
 }

@@ -53,18 +53,18 @@ class Juego {
         recolecta = true;
         resta--;
         PezObstaculo[i].y = -height;
-        println("Colisionando");
+        //println("Colisionando");
       }
     }
   }
 
 
   void dibujar() {
-    this.pantalla.dibujar(this.estadoID);
-    if (estadoID == 2){
+    this.pantalla.dibujar();
+    if (estadoID == 2) {
       timer++;
     }
-    println(suma);
+    // println(suma);
   }
 
 
@@ -80,14 +80,27 @@ class Juego {
   }
 
   void teclado () {
-    botonPrincipal.teclado();
-
     if (estadoID==2 && key == 'd' || key == 'D' ) {
       this.Gnegro.moverDerecha();
     }
 
     if (estadoID==2 && key == 'a'|| key == 'A' ) {
       this.Gnegro.moverIzquierda();
+    }
+    if (juego.estadoID == 0 && key == 'e' || key == 'E' ) {
+      this.estadoID = 1;
+    }
+
+    if (juego.estadoID == 1 && key == 'h' || key == 'h') {
+      this.estadoID = 2;
+    }
+
+    if (juego.estadoID == 3 && key == 'p' || key == 'P') {
+      this.reiniciar();
+    }
+
+    if (juego.estadoID == 4 && key == 'p' || key == 'P') {
+      this.reiniciar();
     }
   }
 
@@ -96,5 +109,25 @@ class Juego {
     this.suma = 0;
     this.resta = 0;
     this.timer =0;
+    this.construirPecesPodridos();
+    this.construirPeces();
+  }
+
+  void sound () {
+    if (estadoID ==0  || estadoID ==1    || estadoID ==2 || estadoID ==3) {
+      player.play();
+      player3.pause();
+      player2.pause();
+    }
+
+    if ( estadoID==4 ) {
+      player.pause();
+      player2.play();
+    }
+
+    if ( estadoID==3 ) {
+      player.pause();
+      player3.play();
+    }
   }
 }
