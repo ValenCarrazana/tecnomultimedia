@@ -41,13 +41,13 @@ class Pantalla {
     }
     //condiciones
 
-    if (juego.estadoID == 2 && juego.suma+juego.resta == 5 && juego.timer/60 <20) {
+    if (juego.estadoID == 2 && juego.suma+juego.resta == 5 && juego.timer/60 <30) {
       juego.estadoID = 3;
       // juego.reiniciar();
     }
 
 
-    if (juego.estadoID == 2 && juego.suma+juego.resta <5 && juego.timer/60 >20 ) {
+    if (juego.estadoID == 2 && juego.suma+juego.resta <5 && juego.timer/60 >30 ) {
       juego.estadoID = 4;
       //   juego.reiniciar();
     }

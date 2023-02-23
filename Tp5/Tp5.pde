@@ -6,11 +6,7 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 
 Minim minim;
-AudioPlayer player;
-AudioPlayer player1;
-AudioPlayer player2;
-AudioPlayer player3;
-
+AudioPlayer player, player1, player2, player3,player4,player5;
 
 Juego juego;
 
@@ -23,6 +19,8 @@ void setup() {
   player1 = minim.loadFile ("coin.mp3", 500);
   player2 = minim.loadFile ("triste.mp3", 500);
   player3 = minim.loadFile ("catbars.mp3", 500);
+  player4 = minim.loadFile ("coin.mp3", 500);
+  player5 = minim.loadFile ("error.mp3", 500);
 }
 void draw() {
   juego.dibujar();

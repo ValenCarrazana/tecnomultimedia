@@ -41,6 +41,8 @@ class Juego {
         Pez[i].y - Pez[i].tam /2 < height) {
         recolecta = true;
         suma++;
+        player4.rewind();
+        player4.play();
         Pez[i].y = -height;
       }
     }
@@ -52,6 +54,8 @@ class Juego {
         PezObstaculo[i].y - PezObstaculo[i].tam /2 < height) {
         recolecta = true;
         resta--;
+        player5.rewind();
+        player5.play();
         PezObstaculo[i].y = -height;
         //println("Colisionando");
       }
@@ -127,5 +131,7 @@ class Juego {
      player.pause();
       player3.play();
     }
+ 
+
   }
 }
